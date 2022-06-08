@@ -1,27 +1,23 @@
 import { LightningElement } from "lwc";
 
 export default class App extends LightningElement {
-  title = "Welcome to Lightning Web Components!";
+   name = 'Electra X4';
+   description = 'A sweet bike built for comfort.';
+   category = 'Mountain';
+   material = 'Steel';
+   price = '$2,700';
+   pictureUrl = 'https://s3-us-west-1.amazonaws.com/sfdc-demo/ebikes/electrax4.jpg';
+   ready = false;
 
-  showFeatures = true;
+   //the method is triggered when a component is inserted in the document object model (DOM).
+   connectedCallback() {
+       setTimeout(() => {
+           this.ready = true;
+       }, 3000);
+   }
 
-  /**
-   * Getter for the features property
-   */
-  get features() {
-    return [
-      {
-        label: "Learn in the browser.",
-        icon: "utility:edit",
-      },
-      {
-        label: "View changes to code instantly with Live Compilation.",
-        icon: "utility:refresh",
-      },
-      {
-        label: "Style your components with SLDS.",
-        icon: "utility:brush",
-      },
-    ];
-  }
+   bike = {
+        name: 'Electra X4',
+        picture: 'https://s3-us-west-1.amazonaws.com/sfdc-demo/ebikes/electrax4.jpg'
+    };
 }
